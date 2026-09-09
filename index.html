@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="暮らしに寄り添う花の定期便、WHITE BLOOM。">
+  <title>WHITE BLOOM｜花のある暮らしを</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/arg-phases.css">
+  <link rel="stylesheet" href="modules/site-alteration/site-alteration.css">
+  <script src="js/progress-state.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/home.js" defer></script>
+  <script src="modules/site-alteration/site-alteration.js" defer></script>
+  <script src="modules/site-alteration/debug-panel.js" defer></script>
+  <script src="js/phase-views.js" defer></script>
+  <script src="js/arg-play.js" defer></script>
+</head>
+<body data-page="home" data-phase="phase1">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header">
+    <div class="site-header__inner container">
+      <a class="site-logo" href="index.html" aria-label="WHITE BLOOM ホーム">
+        <img src="images/logo-white-bloom.png" alt="WHITE BLOOM" width="1928" height="467">
+      </a>
+      <nav class="site-nav" id="site-navigation" aria-label="メインナビゲーション" data-site-nav data-open="false">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html" aria-current="page">Home</a></li>
+          <li><a class="site-nav__link" href="index.html#about">About</a></li>
+          <li><a class="site-nav__link" href="flowers.html?browse=1">Flowers</a></li>
+          <li><a class="site-nav__link" href="index.html#plan">Plan</a></li>
+          <li><a class="site-nav__link" href="index.html#how-to">How to</a></li>
+          <li><a class="site-nav__link" href="voices.html?browse=1">Voice</a></li>
+          <li><a class="site-nav__link" href="index.html#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <button class="reset-button" type="button" data-exploration-reset>探索リセット</button>
+      <button class="menu-button" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="メニューを開く" data-menu-button>
+        <span class="menu-button__line"></span><span class="menu-button__line"></span><span class="menu-button__line"></span>
+      </button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-label="WHITE BLOOMについて" data-hero>
+      <div class="hero__slides" aria-hidden="true">
+        <img class="hero__slide is-active" src="images/hero-white-bloom.jpg" alt="" width="1672" height="941" data-hero-slide>
+        <img class="hero__slide hero__slide--staff" src="images/hero-staff-arrangement.jpg" alt="" width="1536" height="1024" data-hero-slide>
+        <img class="hero__slide hero__slide--delivery" src="images/hero-delivery-preparation.jpg" alt="" width="1672" height="941" data-hero-slide>
+        <img class="hero__slide hero__slide--life" src="images/hero-flower-life.jpg" alt="" width="1672" height="941" data-hero-slide>
+      </div>
+      <div class="hero__veil"></div>
+      <div class="hero__content container">
+        <p class="hero__brand">WHITE BLOOM</p>
+        <h1>花のある暮らしで、<br>毎日を少し豊かに。</h1>
+        <p>季節に合わせて選んだ花を、<br>いちばん美しい頃にお届けします。</p>
+        <a class="button" href="#plan">プランを見る</a>
+      </div>
+      <div class="hero__dots" aria-label="スライドを選択">
+        <button class="is-active" type="button" aria-label="1枚目を表示" aria-current="true" data-hero-dot></button>
+        <button type="button" aria-label="2枚目を表示" data-hero-dot></button>
+        <button type="button" aria-label="3枚目を表示" data-hero-dot></button>
+        <button type="button" aria-label="4枚目を表示" data-hero-dot></button>
+      </div>
+    </section>
+
+    <section class="section concept" aria-labelledby="concept-title">
+      <div class="container--reading section-heading section-heading--center">
+        <p class="eyebrow">Concept</p>
+        <h2 id="concept-title">一輪の花から、<br class="sp-only">暮らしに小さな余白を。</h2>
+        <p>忙しい毎日の中で、ふと花を眺める時間。WHITE BLOOMは、そんな穏やかなひとときをお届けする花の定期便です。専門スタッフが季節の花を選び、ご自宅で飾りやすい組み合わせに整えてお届けします。</p>
+      </div>
+    </section>
+
+    <section class="section monthly section--subtle" aria-labelledby="monthly-title">
+      <div class="container split-layout">
+        <div class="split-layout__image image-frame" data-home-dahlia><img src="images/flower-dahlia.jpg" alt="淡い色合いのダリア" width="1536" height="1024" data-cover></div>
+        <div class="split-layout__body">
+          <p class="eyebrow">Flower of the month</p>
+          <p class="section-number">09</p>
+          <h2 id="monthly-title">今月の花<br><span>ダリア</span></h2>
+          <p>幾重にも重なる花びらが美しいダリア。落ち着いた色合いを中心に、晩夏から初秋へ移り変わる空気を感じるブーケに仕立てました。</p>
+          <dl class="flower-note"><div><dt>花言葉</dt><dd>優雅・気品</dd></div><div><dt>おすすめ</dt><dd>リビングや玄関に</dd></div></dl>
+          <a class="text-link" href="flowers.html?browse=1">季節の花を見る<span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container split-layout split-layout--reverse">
+        <div class="split-layout__image image-frame"><img src="images/about-flower-life.jpg" alt="花を飾った明るい室内" width="1536" height="1024" data-cover></div>
+        <div class="split-layout__body">
+          <p class="eyebrow">About us</p>
+          <h2 id="about-title">花を選ぶ楽しさも、<br>飾るよろこびも。</h2>
+          <p>市場に届いた花の中から、鮮度と季節感を大切にセレクト。箱を開けたらすぐに飾れるよう、花の特徴に合わせたお手入れカードも一緒にお届けします。</p>
+          <ul class="check-list"><li>季節に寄り添う花合わせ</li><li>鮮度を保つ専用パッケージ</li><li>初めてでも安心のお手入れガイド</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--subtle" aria-labelledby="flowers-title">
+      <div class="container">
+        <div class="section-heading section-heading--center"><p class="eyebrow">Seasonal flowers</p><h2 id="flowers-title">お届けする花</h2><p>その月ならではの表情を楽しめる、6つの花をご用意しています。</p></div>
+        <div class="flower-preview">
+          <article><img src="images/flower-sweetpea.jpg" alt="スイートピー" width="1536" height="1024" data-cover><p>April</p><h3>スイートピー</h3></article>
+          <article><img src="images/flower-lavender.jpg" alt="ラベンダー" width="1536" height="1024" data-cover><p>May</p><h3>ラベンダー</h3></article>
+          <article><img src="images/flower-lily.jpg" alt="ユリ" width="1536" height="1024" data-cover><p>June</p><h3>ユリ</h3></article>
+        </div>
+        <div class="section-action flower-preview__action"><a class="button button--outline" href="flowers.html?browse=1">すべての花を見る</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="plan" aria-labelledby="plan-title">
+      <div class="container"><div class="section-heading section-heading--center"><p class="eyebrow">Plan</p><h2 id="plan-title">料金プラン</h2><p>暮らしに合うボリュームとお届け頻度をお選びください。</p></div>
+        <div class="plan-grid">
+          <article class="plan-card"><p class="plan-card__en">Light</p><h3>ライトプラン</h3><p class="plan-card__desc">一輪挿しや小さな花器に。気軽に花のある生活を始めたい方へ。</p><p class="plan-card__price"><span>月額</span> 1,980<small>円（税込）</small></p><ul><li>花 3〜4本</li><li>月1回お届け</li><li>お手入れカード付き</li></ul></article>
+          <article class="plan-card plan-card--featured"><p class="plan-card__badge">おすすめ</p><p class="plan-card__en">Standard</p><h3>スタンダードプラン</h3><p class="plan-card__desc">食卓やリビングにちょうどよい、季節を感じるスタンダードブーケ。</p><p class="plan-card__price"><span>月額</span> 3,300<small>円（税込）</small></p><ul><li>花 6〜8本</li><li>月1回お届け</li><li>花器・お手入れカード付き</li></ul></article>
+          <article class="plan-card"><p class="plan-card__en">Rich</p><h3>リッチプラン</h3><p class="plan-card__desc">空間を華やかに彩る、枝ものや季節の主役花を含む豊かなセット。</p><p class="plan-card__price"><span>月額</span> 5,500<small>円（税込）</small></p><ul><li>花 10〜12本</li><li>月1回お届け</li><li>花器・お手入れカード付き</li></ul></article>
+        </div>
+        <p class="plan-note">※送料込み。お届け日の7日前まで、スキップ・解約が可能です。</p>
+      </div>
+    </section>
+
+    <section class="section section--subtle" id="how-to" aria-labelledby="how-title"><div class="container"><div class="section-heading section-heading--center"><p class="eyebrow">How to</p><h2 id="how-title">ご利用の流れ</h2></div>
+      <ol class="steps"><li><span>01</span><h3>プランを選ぶ</h3><p>花のボリュームに合わせて、お好みのプランをお選びください。</p></li><li><span>02</span><h3>お届けを待つ</h3><p>鮮度を保てる専用ボックスで、季節の花をご自宅へお届けします。</p></li><li><span>03</span><h3>花を飾る</h3><p>お手入れカードを参考に、お好きな場所で花との時間をお楽しみください。</p></li></ol>
+    </div></section>
+
+    <section class="section" aria-labelledby="voice-title"><div class="container"><div class="section-heading section-heading--center"><p class="eyebrow">Voice</p><h2 id="voice-title">利用者の声</h2></div>
+      <div class="voice-preview"><article><p class="voice-preview__stars" aria-label="5段階中5">★★★★★</p><blockquote>自分では選ばない花との出会いが毎月の楽しみです。お部屋が明るくなりました。</blockquote><p class="voice-preview__person">30代・東京都</p></article><article><p class="voice-preview__stars" aria-label="5段階中5">★★★★★</p><blockquote>お手入れ方法が分かりやすく、花を飾るのが初めてでも長く楽しめました。</blockquote><p class="voice-preview__person">40代・神奈川県</p></article><article><p class="voice-preview__stars" aria-label="5段階中5">★★★★★</p><blockquote>箱を開ける時間まで特別に感じます。季節を身近に感じられるのが嬉しいです。</blockquote><p class="voice-preview__person">20代・大阪府</p></article></div>
+      <div class="section-action"><a class="text-link" href="voices.html?browse=1">利用者の声をもっと見る<span aria-hidden="true">→</span></a></div>
+    </div></section>
+
+    <section class="section faq section--subtle" id="faq" aria-labelledby="faq-title"><div class="container--reading"><div class="section-heading section-heading--center"><p class="eyebrow">FAQ</p><h2 id="faq-title">よくあるご質問</h2></div>
+      <details><summary>どのような花が届きますか？</summary><p>旬を迎えた花を中心に、色合いや飾りやすさを考えて組み合わせます。内容は毎月変わります。</p></details><details><summary>受け取れない月はどうすればよいですか？</summary><p>お届け予定日の7日前まで、マイページからその月のお届けをスキップできます。</p></details><details><summary>花瓶を持っていなくても始められますか？</summary><p>スタンダード・リッチプランの初回には、届いた花をすぐに飾れるシンプルな花器が付きます。</p></details><details><summary>届いた花に元気がない場合は？</summary><p>到着後24時間以内に写真とともにご連絡ください。状態を確認し、代替のお花を手配します。</p></details>
+    </div></section>
+
+    <section class="cta" id="contact" aria-labelledby="cta-title"><div class="container--reading"><p class="eyebrow">Bring flowers home</p><h2 id="cta-title">花のある暮らしを、<br>今日から。</h2><p>初回は花器とお手入れガイドを添えてお届けします。</p></div></section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <img class="site-footer__logo" src="images/logo-white-bloom.png" alt="" width="1928" height="467">
+      <p class="site-footer__copyright">©ぺいぽぴー</p>
+      <p class="site-footer__notice">※このWebサイトの内容はフィクションであり、実在の人物・団体とは一切関係ありません。</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,587 @@
+/* STEP4: TRUTH and Ending only. Existing storefront/ARG selectors stay untouched. */
+.truth-page {
+  --container-reading: 1200px;
+  color: #c9c7c1;
+  background: #111311;
+  background-image: none;
+}
+
+.truth-page .site-header {
+  color: var(--color-text);
+  background: #fdfafa;
+}
+
+.truth-page .site-footer {
+  border-color: #30332f;
+  background: #0d0f0d;
+}
+
+.truth-main {
+  background: #141614;
+}
+
+.truth-hero {
+  display: grid;
+  min-height: min(680px, calc(100svh - var(--header-height)));
+  align-items: center;
+  padding-block: clamp(100px, 14vw, 180px);
+  border-bottom: 1px solid #393d38;
+  background: linear-gradient(rgba(14, 16, 14, .7), rgba(14, 16, 14, .78)), url("../images/white-flower.jpg") center/cover no-repeat;
+}
+
+.truth-code,
+.truth-section .truth-section__number,
+.truth-exit .truth-section__number {
+  margin: 0 0 18px;
+  color: #c23434;
+  letter-spacing: .16em;
+}
+
+.truth-hero h1 {
+  color: #e4e2da;
+  font-size: clamp(2.3rem, 6vw, 4.4rem);
+  line-height: 1.38;
+  letter-spacing: .1em;
+}
+
+.truth-lead {
+  margin: 30px 0 0;
+  color: #8f958e;
+  font-family: var(--font-heading);
+  letter-spacing: .1em;
+}
+
+.truth-document {
+  overflow: hidden;
+}
+
+.truth-section {
+  padding-block: clamp(78px, 10vw, 140px);
+}
+
+.truth-section h2 {
+  margin-bottom: 32px;
+  color: #dddcd5;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+}
+
+.truth-section h2#truth-convergence {
+  color: #cf3b3b;
+}
+
+.truth-section h3 {
+  color: #d0cec7;
+}
+
+.truth-section p {
+  color: #b8b8b1;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.truth-section p+p {
+  margin-top: 20px;
+}
+
+.truth-notes {
+  display: grid;
+  margin: 30px 0;
+  padding: 0;
+  grid-template-columns: repeat(5, 1fr);
+  border-block: 1px solid #454944;
+  list-style: none;
+}
+
+.truth-notes li {
+  padding: 14px 10px;
+  color: #9ea39c;
+  font-size: .9rem;
+  text-align: center;
+}
+
+.truth-notes li+li {
+  border-left: 1px solid #383c37;
+}
+
+.truth-section--dark,
+.truth-section--results {
+  border-block: 1px solid #592525;
+  background: linear-gradient(115deg, #120e0e, #0e100e 55%);
+}
+
+.truth-figure {
+  margin: clamp(45px, 7vw, 80px) 0 0;
+  border: 1px solid #5b2929;
+  background: #0b0d0b;
+}
+
+.truth-figure img {
+  width: 100%;
+}
+
+.truth-figure figcaption {
+  display: flex;
+  padding: 14px 18px;
+  color: #92978f;
+  gap: 18px;
+}
+
+.truth-figure figcaption>span:first-child {
+  color: #d0d2cb;
+}
+
+.truth-comparison-labels {
+  justify-content: space-around;
+}
+
+.truth-comparison-labels span {
+  width: 50%;
+  color: #c3c6bf;
+  text-align: center;
+}
+
+.truth-reveal {
+  margin-top: 34px !important;
+  padding: 22px 26px;
+  color: #c9c6bf !important;
+  border-left: 2px solid #a43232;
+  background: rgba(120, 35, 35, .1);
+}
+
+.truth-reveal strong {
+  color: #d65151;
+  letter-spacing: .12em;
+}
+
+.truth-section__intro {
+  margin-bottom: 48px;
+}
+
+.truth-stages {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border: 1px solid #41443f;
+  list-style: none;
+}
+
+.truth-stages li {
+  display: flex;
+  min-width: 0;
+  padding: 26px 18px;
+  background: #111411;
+  flex-direction: column;
+}
+
+.truth-stages li+li {
+  border-left: 1px solid #41443f;
+}
+
+.truth-stages span {
+  color: #777e76;
+  font: .76rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.truth-stages strong {
+  margin-top: 18px;
+  color: #e0ded7;
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+.truth-stages small {
+  margin-top: 8px;
+  color: #9da29b;
+}
+
+.truth-field-test {
+  margin-top: 60px;
+  padding: clamp(28px, 5vw, 52px);
+  border-left: 3px solid #a43232;
+  background: linear-gradient(100deg, #241616, #1b1e1a);
+}
+
+.truth-field-test h3 {
+  margin-bottom: 20px;
+  font-size: 1.35rem;
+}
+
+.truth-section--model {
+  background: linear-gradient(110deg, #251717, #101210 70%);
+}
+
+.truth-model-grid,
+.truth-results-grid {
+  display: grid;
+  margin: 42px 0;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #484c46;
+}
+
+.truth-model-grid div,
+.truth-results-grid div {
+  display: flex;
+  padding: 16px 18px;
+  border-bottom: 1px solid #484c46;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.truth-model-grid dt,
+.truth-results-grid dt {
+  color: #b79797;
+}
+
+.truth-model-grid dd,
+.truth-results-grid dd {
+  margin: 0;
+  color: #e3b4b4;
+  font-family: var(--font-heading);
+}
+
+.truth-section blockquote {
+  margin: 42px 0 0;
+  padding: 28px clamp(22px, 4vw, 40px);
+  color: #dbd8d0;
+  border: 1px solid #4a4e47;
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+  line-height: 2;
+}
+
+.truth-findings {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.truth-findings>div {
+  padding: clamp(25px, 4vw, 42px);
+  border: 1px solid #3f433d;
+  background: #111411;
+}
+
+.truth-findings h3 {
+  margin-bottom: 18px;
+  font-size: 1.2rem;
+}
+
+.truth-findings h3 {
+  color: #d05252;
+}
+
+.truth-findings p {
+  margin: 0;
+}
+
+.truth-progress-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.truth-progress-strip img {
+  width: 100%;
+  height: clamp(220px, 28vw, 410px);
+  object-fit: cover;
+  filter: brightness(.62) saturate(.72);
+}
+
+.truth-progress-strip img+img {
+  border-left: 1px solid #5b2929;
+}
+
+.truth-progress-record figcaption {
+  color: #bd9797;
+}
+
+.truth-progress-record figcaption span:first-child {
+  color: #d24a4a;
+}
+
+.truth-status {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 7px 15px;
+  color: #d8d6ce !important;
+  border: 1px solid #666c64;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.truth-results-grid {
+  grid-template-columns: 1fr;
+}
+
+.truth-results-grid dd {
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+}
+
+.truth-research-comment {
+  padding: 24px 28px;
+  border-left: 2px solid #9d3333;
+  background: rgba(120, 35, 35, .09);
+}
+
+.truth-research-comment p {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .9rem;
+}
+
+.truth-next-label {
+  margin-bottom: 6px !important;
+  color: #8e958c !important;
+  font-family: var(--font-heading);
+  letter-spacing: .14em;
+}
+
+.truth-targets {
+  display: grid;
+  margin: 38px 0;
+  padding: 0;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid #692b2b;
+  list-style: none;
+}
+
+.truth-targets li {
+  padding: 18px 10px;
+  color: #c2c3bc;
+  text-align: center;
+}
+
+.truth-targets li+li {
+  border-left: 1px solid #444841;
+}
+
+.truth-signature {
+  margin-top: 30px !important;
+  color: #7f857d !important;
+  text-align: right;
+}
+
+.truth-share {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 8px 24px;
+  align-items: center;
+  justify-content: center;
+  color: #b9bbb5;
+  border: 1px solid #4a4f49;
+  border-radius: 999px;
+  font-size: 18px;
+  transition: opacity var(--transition);
+}
+
+.truth-share:hover {
+  opacity: .7;
+}
+
+.truth-delivery {
+  padding: clamp(60px, 16vw, 120px) var(--gutter);
+  color: var(--color-text);
+  background: #fffafa url("../images/paper.jpg") center/cover fixed;
+  text-align: center;
+}
+
+.truth-delivery__inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.truth-delivery__eyebrow {
+  margin: 0 0 10px;
+  color: var(--color-pink-dark);
+  font: .75rem/1.6 var(--font-en);
+  letter-spacing: .18em;
+}
+
+.truth-delivery h2 {
+  color: var(--color-brown);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.truth-delivery__lead {
+  margin: 22px auto 36px;
+  color: var(--color-text-light);
+  line-height: 1.9;
+}
+
+.truth-delivery__card {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: minmax(0, .9fr) minmax(230px, 1.1fr);
+  border: 1px solid var(--color-border);
+  background: #fff;
+  text-align: left;
+}
+
+.truth-delivery__card img {
+  width: 100%;
+  height: 100%;
+  min-height: 290px;
+  object-fit: cover;
+}
+
+.truth-delivery__record {
+  padding: clamp(24px, 5vw, 42px);
+  align-content: center;
+}
+
+.truth-delivery__record h3 {
+  margin-bottom: 22px;
+  color: var(--color-brown);
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+}
+
+.truth-delivery__record dl {
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.truth-delivery__record dl div {
+  display: grid;
+  padding: 12px 0;
+  grid-template-columns: 95px 1fr;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.truth-delivery__record dt {
+  color: var(--color-text-light);
+}
+
+.truth-delivery__record dd {
+  margin: 0;
+}
+
+.truth-delivery__start {
+  margin: clamp(58px, 8vw, 88px) 0 18px;
+  color: var(--color-brown);
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+}
+
+.truth-delivery__actions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.truth-share--delivery {
+  color: var(--color-brown);
+  border-color: var(--color-border);
+  background: rgba(255, 255, 255, .45);
+}
+
+.truth-delivery__top {
+  color: var(--color-text-light);
+  font-size: 16px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity var(--transition);
+}
+
+.truth-delivery__top:hover {
+  opacity: .7;
+}
+
+@media (max-width: 900px) {
+  .truth-stages {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .truth-stages li:nth-child(4) {
+    border-left: 0;
+  }
+
+  .truth-stages li:nth-child(n + 4) {
+    border-top: 1px solid #41443f;
+  }
+}
+
+@media (max-width: 620px) {
+  .truth-page {
+    font-size: 15px;
+  }
+
+  .truth-hero {
+    min-height: 560px;
+  }
+
+  .truth-model-grid,
+  .truth-findings {
+    grid-template-columns: 1fr;
+  }
+
+  .truth-stages {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .truth-stages li:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .truth-stages li:nth-child(even) {
+    border-left: 1px solid #41443f;
+  }
+
+  .truth-stages li:nth-child(n + 3) {
+    border-top: 1px solid #41443f;
+  }
+
+  .truth-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .truth-notes li+li {
+    border-top: 1px solid #383c37;
+    border-left: 0;
+  }
+
+  .truth-targets {
+    grid-template-columns: 1fr;
+  }
+
+  .truth-targets li+li {
+    border-top: 1px solid #444841;
+    border-left: 0;
+  }
+
+  .truth-figure figcaption {
+    flex-wrap: wrap;
+  }
+
+  .truth-progress-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .truth-progress-strip img {
+    height: 250px;
+  }
+
+  .truth-progress-strip img:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .truth-progress-strip img:nth-child(n + 3) {
+    border-top: 1px solid #5b2929;
+  }
+
+  .truth-delivery__card {
+    grid-template-columns: 1fr;
+  }
+
+  .truth-delivery__card img {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .truth-share,
+  .truth-delivery__top {
+    transition: none;
+  }
+}
