@@ -33,17 +33,6 @@
     finally { phaseTransitionLocked = false; }
   };
 
-  const createPhase1Management = () => {
-    if (document.querySelector('[data-home-management]')) return;
-    const body = document.querySelector('.monthly .split-layout__body');
-    if (!body) return;
-    const record = document.createElement('section');
-    record.className = 'home-management-record';
-    record.dataset.homeManagement = '';
-    record.innerHTML = '<h3>継続利用者評価区分</h3><dl><div><dt>対象</dt><dd>継続利用者</dd></div><div><dt>評価項目</dt><dd>感情安定度</dd></div><div><dt>目標値</dt><dd>72％</dd></div><div><dt>運用状況</dt><dd>実施中</dd></div></dl>';
-    body.append(record);
-  };
-
   const startHome = () => {
     document.body.dataset.phase = progress.phase === 1 ? 'phase1' : `phase${progress.phase}`;
     const frame = document.querySelector('[data-home-dahlia]');
@@ -69,7 +58,6 @@
     const anomalyPersisted = progress.phase >= 2;
     trigger.classList.toggle('is-active', progress.phase1Triggered || anomalyPersisted);
     trigger.classList.toggle('is-revealed', progress.phase1Revealed || anomalyPersisted);
-    if (progress.phase1Revealed || anomalyPersisted) createPhase1Management();
 
     if (progress.phase !== 1) return;
 
@@ -93,10 +81,8 @@
         progress.phase = 2;
         save();
         trigger.classList.add('is-revealed');
-        createPhase1Management();
         document.body.dataset.phase = 'phase2-ready';
         announce('PHASE2が発動しました。お届けする花に異常が発生しています');
-        document.querySelector('[data-home-management]')?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'center' });
       }
     });
   };
@@ -205,30 +191,16 @@
     document.addEventListener('click', async (event) => {
       const action = event.target.closest('[data-phase-action]')?.dataset.phaseAction;
       if (!action || phaseTransitionLocked) return;
-      if (action === 'phase3-anomaly' && state.phase === 'phase3') {
-        if (await playAlteration()) {
-          progress.phase3Discovered = true;
-          progress.phase = 4;
-          state.phase = 'phase4';
-          save();
-          render();
-          document.querySelector('[data-voices-phase4]')?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
-        }
-      } else if (action === 'phase4-month18' && state.phase === 'phase4' && !state.converged) {
+      if (action === 'convergence-subject16' && (state.phase === 'phase3' || state.phase === 'phase4') && !state.converged) {
+        progress.phase3Discovered = true;
+        progress.phase = 4;
+        state.phase = 'phase4';
         state.converged = true;
         progress.converged = true;
         save();
         render();
-        document.querySelector('[data-convergence-stage]')?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'center' });
-      } else if (action === 'phase4-back-to-voices' && state.phase === 'phase4') {
-        progress.phase = 3;
-        progress.converged = false;
-        state.phase = 'phase3';
-        state.converged = false;
-        save();
-        render();
-        document.querySelector('[data-voices-phase3]')?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
-      } else if (action === 'phase4-convergence-result' && state.phase === 'phase4' && state.converged) {
+        document.querySelector('[data-convergence-result]')?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'center' });
+      } else if (action === 'convergence-result' && state.phase === 'phase4' && state.converged) {
         if (await playAlteration()) {
           progress.phase = 5;
           progress.truthReached = true;

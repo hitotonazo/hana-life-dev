@@ -67,6 +67,64 @@ body[data-phase="phase2"] .flower-care + .cta .eyebrow { color: var(--color-pink
   .progress-card--18::after { opacity: .24; }
 }
 
+/* PHASE 2 keeps the public flower copy and adds only the exposure stage. */
+body[data-phase="phase2"] .internal-flower-record {
+  min-height: 0;
+  padding-block: 18px;
+}
+
+body[data-phase="phase2"] .internal-flower-record__stage { margin: 0; }
+
+body[data-phase="phase2"] .flower-card__normal-copy .internal-flower-record {
+  min-height: 0;
+  margin: 0 0 20px;
+  padding: 13px 16px;
+  color: #fff;
+  border: 1px solid #b52525;
+  background: #151010;
+}
+
+body[data-phase="phase2"] .flower-card__normal-copy .internal-flower-record__stage {
+  padding: 0;
+  color: #fff;
+  border: 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* Unified PHASE 3 convergence content. */
+.phase-convergence { color: #ded2d2; background: #090909; }
+.phase-convergence__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.phase-convergence__card { position: relative; display: grid; min-width: 0; grid-template-columns: 150px 1fr; overflow: hidden; border: 1px solid #582020; background: #121111; opacity: 0; transform: translateY(14px); }
+.phase-convergence__card.is-visible { animation: record-fade-in .56s ease-out var(--record-delay, 0ms) forwards; }
+.phase-convergence__portrait { width: 100%; height: 100%; min-height: 190px; object-fit: cover; filter: brightness(.63) saturate(.72); }
+.phase-convergence__card--repeated .phase-convergence__portrait { filter: brightness(.63) saturate(.72); }
+.phase-convergence__body { display: flex; min-width: 0; padding: 22px; flex-direction: column; }
+.phase-convergence__id { margin: 0 0 12px; color: #aa8d8d; font: .875rem/1.5 var(--font-en); letter-spacing: .12em; }
+.phase-convergence__card blockquote { margin-bottom: 20px; color: #cf2929; white-space: pre-line; font-family: var(--font-heading); font-size: .94rem; line-height: 2; }
+.phase-convergence__person { display: flex; margin: auto 0 0; padding-top: 16px; border-top: 1px solid #562020; flex-direction: column; }
+.phase-convergence__person strong { font-family: var(--font-heading); font-weight: 500; }
+.phase-convergence__person span { color: #aa8d8d; font-size: .875rem; }
+.phase-convergence__trigger { position: absolute; z-index: 2; inset: 0; width: 100%; border: 0; border-radius: 0; background: transparent; cursor: pointer; }
+.phase-convergence__trigger:focus-visible { outline: 3px solid #8d4d4d; outline-offset: -5px; }
+.phase-convergence__final { display: grid; min-height: min(680px, 80vh); margin-top: 64px; place-items: center; background: #222624; }
+.phase-convergence__result { display: grid; width: min(310px, 76vw); padding: 12px; color: #f2f2ed; border: 1px solid #8b918c; border-radius: 0; background: #343936; cursor: pointer; }
+.phase-convergence__result img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.phase-convergence__result strong { margin-top: 15px; font-family: var(--font-heading); font-size: 1.1rem; }
+.phase-convergence__result span { color: #c8cbc8; font-size: .875rem; }
+
+@media (max-width: 980px) {
+  .phase-convergence__card { grid-template-columns: 130px 1fr; }
+}
+
+@media (max-width: 620px) {
+  .phase-convergence__list { grid-template-columns: 1fr; }
+  .phase-convergence__card { grid-template-columns: 112px minmax(0, 1fr); }
+  .phase-convergence__portrait { min-height: 180px; }
+  .phase-convergence__body { padding: 18px; }
+  .phase-convergence__final { min-height: 620px; }
+}
+
 /* PHASE 1–2: product cards overwritten by restrained internal records. */
 .arg-flower-image-button {
   position: relative;
@@ -344,6 +402,7 @@ body[data-phase="phase2"] .internal-flower-record__details dt { color: #a88989; 
   body[data-phase="phase2"] [data-flower="dahlia"].is-dahlia-transitioning .flower-card__prototype-image { opacity: 1; animation: none; }
   .arg-review-card.is-anomaly-target { border: 2px solid #9d5959; animation: none; }
   .arg-review-card.is-visible { opacity: 1; transform: none; animation: none; }
+  .phase-convergence__card.is-visible { opacity: 1; transform: none; animation: none; }
   .arg-review-card.is-anomaly-target::after,
   .arg-review-card.is-anomaly-target blockquote,
   .arg-review-card.is-anomaly-target .arg-review-card__portrait,
@@ -351,4 +410,90 @@ body[data-phase="phase2"] .internal-flower-record__details dt { color: #a88989; 
   .convergence-stage__photos img,
   .convergence-stage__result { animation: none; }
   .convergence-stage__result { opacity: 1; }
+}
+
+/* PHASE 2: high-contrast altered flower records. */
+body[data-phase="phase2"] .flower-card {
+  color: #fff;
+  border: 1px solid #d33434;
+  background: #0d0b0b;
+}
+
+body[data-phase="phase2"] .flower-card__body {
+  color: #fff;
+  border: 0;
+  background: #0d0b0b;
+}
+
+body[data-phase="phase2"] .flower-card__normal-copy .internal-flower-record {
+  min-height: 0;
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  color: #fff;
+  border: 1px solid #d33434;
+  border-left-width: 5px;
+  background: #240b0b;
+  box-shadow: none;
+}
+
+body[data-phase="phase2"] .flower-card__normal-copy .internal-flower-record__stage {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  border: 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-shadow: 0 0 8px rgba(255, 255, 255, .18);
+}
+
+body[data-phase="phase2"] .flower-card h2,
+body[data-phase="phase2"] .flower-card__body > p:not(.flower-card__month),
+body[data-phase="phase2"] .flower-card dt,
+body[data-phase="phase2"] .flower-card dd { color: #fff; }
+
+body[data-phase="phase2"] .flower-card dl,
+body[data-phase="phase2"] .flower-card dl div { border-color: #9f2929; }
+
+body[data-phase="phase2"] .flower-card dt { font-weight: 700; }
+body[data-phase="phase2"] .flower-card dd { margin-left: 0; }
+
+/* PHASE 3: restore the original anomaly treatment on SUBJECT 16. */
+.phase-convergence__card.is-anomaly-subject.is-visible {
+  animation: record-fade-in .56s ease-out var(--record-delay, 0ms) forwards,
+    review-red-shift 1s ease-in-out calc(var(--record-delay, 0ms) + .56s) infinite;
+}
+
+.phase-convergence__card.is-anomaly-subject::after {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  opacity: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 3px, rgba(213, 42, 42, .32) 4px 5px),
+    repeating-radial-gradient(circle at 37% 41%, rgba(255, 255, 255, .2) 0 1px, transparent 2px 6px);
+  content: "";
+  pointer-events: none;
+  animation: review-noise 1s steps(2, end) infinite;
+}
+
+.phase-convergence__card.is-anomaly-subject blockquote { animation: review-text-drop 1s steps(1, end) infinite; }
+.phase-convergence__card.is-anomaly-subject .phase-convergence__portrait { animation: review-image-shift 1s steps(1, end) infinite; }
+.phase-convergence__card.is-anomaly-subject .phase-convergence__trigger { z-index: 4; }
+
+@media (prefers-reduced-motion: reduce) {
+  .phase-convergence__card.is-anomaly-subject.is-visible {
+    border: 2px solid #c53a3a;
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .phase-convergence__card.is-anomaly-subject::after {
+    opacity: .34;
+    animation: none;
+  }
+
+  .phase-convergence__card.is-anomaly-subject blockquote,
+  .phase-convergence__card.is-anomaly-subject .phase-convergence__portrait { animation: none; }
 }
