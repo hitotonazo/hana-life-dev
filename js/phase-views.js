@@ -96,9 +96,8 @@
     const people = [...phase3People.slice(0, 10), ...phase3People.slice(11), phase3People[10]];
     const subject11 = phase3People[10];
     const appendCard = ({ name, meta, image }, position, repeated = false) => {
-      const hasNoise = position === 21;
-      const isTarget = hasNoise;
-      const card = element('article', `phase-convergence__card${repeated ? ' phase-convergence__card--repeated' : ''}${hasNoise ? ' is-anomaly-subject' : ''}${isTarget ? ' is-progression-target' : ''}`);
+      const hasNoise = position >= 15;
+      const card = element('article', `phase-convergence__card${repeated ? ' phase-convergence__card--repeated' : ''}${hasNoise ? ' is-anomaly-subject' : ''}`);
       card.style.setProperty('--record-delay', `${Math.min(position, 12) * 70}ms`);
       const portrait = element('img', 'phase-convergence__portrait');
       portrait.src = `images/review-human-${image}.jpg`;
@@ -111,13 +110,6 @@
       person.append(element('strong', '', name), element('span', '', meta));
       body.append(person);
       card.append(portrait, body);
-      if (isTarget) {
-        const trigger = element('button', 'phase-convergence__trigger');
-        trigger.type = 'button';
-        trigger.dataset.phaseAction = 'convergence-subject16';
-        trigger.setAttribute('aria-label', 'SUBJECT 16の収束記録を確認する');
-        card.append(trigger);
-      }
       list.append(card);
     };
     people.forEach((person, index) => appendCard(person, index));
@@ -147,7 +139,10 @@
     resultImage.height = 768;
     resultButton.append(resultImage, element('strong', '', '第6段階　定着完了'), element('span', '', '基準人格モデルとの一致を確認'));
     result.append(photos, resultButton);
-    container.append(heading, list, result);
+    const end = element('div', 'phase-convergence__end');
+    end.dataset.convergenceEnd = '';
+    end.setAttribute('aria-hidden', 'true');
+    container.append(heading, list, end, result);
     section.append(container);
     normal.after(section);
 

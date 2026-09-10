@@ -188,19 +188,21 @@
   const startVoices = () => {
     const state = { phase: progress.phase >= 4 ? 'phase4' : progress.phase >= 3 ? 'phase3' : 'phase0', converged: progress.converged };
     const render = () => views.renderVoices(state);
+    const beginConvergence = () => {
+      if (state.phase !== 'phase3' || state.converged) return;
+      progress.phase3Discovered = true;
+      progress.phase = 4;
+      state.phase = 'phase4';
+      state.converged = true;
+      progress.converged = true;
+      save();
+      render();
+      document.querySelector('[data-convergence-result]')?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'center' });
+    };
     document.addEventListener('click', async (event) => {
       const action = event.target.closest('[data-phase-action]')?.dataset.phaseAction;
       if (!action || phaseTransitionLocked) return;
-      if (action === 'convergence-subject16' && (state.phase === 'phase3' || state.phase === 'phase4') && !state.converged) {
-        progress.phase3Discovered = true;
-        progress.phase = 4;
-        state.phase = 'phase4';
-        state.converged = true;
-        progress.converged = true;
-        save();
-        render();
-        document.querySelector('[data-convergence-result]')?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'center' });
-      } else if (action === 'convergence-result' && state.phase === 'phase4' && state.converged) {
+      if (action === 'convergence-result' && state.phase === 'phase4' && state.converged) {
         if (await playAlteration()) {
           progress.phase = 5;
           progress.truthReached = true;
@@ -210,6 +212,15 @@
       }
     });
     render();
+    const end = document.querySelector('[data-convergence-end]');
+    if (end && state.phase === 'phase3' && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        beginConvergence();
+      }, { threshold: 0.01 });
+      observer.observe(end);
+    }
   };
 
   if (page === 'home') startHome();

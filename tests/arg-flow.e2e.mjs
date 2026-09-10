@@ -150,15 +150,13 @@ const testWidth = async (width) => {
   })()`), `${width}: PHASE3 profile continuity is broken`);
   assert(await evaluate(cdp, `new Set([...document.querySelectorAll('.phase-convergence__card blockquote')].map((node) => node.textContent)).size === 1`), `${width}: reviews are not identical`);
   assert(await evaluate(cdp, `[...document.querySelectorAll('.phase-convergence__card--repeated')].length === 10 && [...document.querySelectorAll('.phase-convergence__card--repeated img')].every((image) => image.src.endsWith('review-human-11.jpg') && getComputedStyle(image).objectPosition === '50% 50%')`), `${width}: SUBJECT 16の連続部分が正しくありません`);
-  assert(await evaluate(cdp, `document.querySelectorAll('.phase-convergence__card.is-anomaly-subject').length === 1 && [...document.querySelectorAll('.phase-convergence__card')].at(-5).classList.contains('is-anomaly-subject') && document.querySelector('.phase-convergence__trigger').closest('.phase-convergence__card').classList.contains('is-anomaly-subject')`), `${width}: ノイズ対象が最後から5番目のクリック対象になっていません`);
+  assert(await evaluate(cdp, `document.querySelectorAll('.phase-convergence__card.is-anomaly-subject').length === 11 && !document.querySelector('.phase-convergence__trigger')`), `${width}: SUBJECT 16全件のノイズまたはクリック要素の削除が正しくありません`);
   assert(await evaluate(cdp, `!document.querySelector('.progress-card, .progress-metrics, .arg-voices__back')`), `${width}: 旧PHASE4 UIが残っています`);
-  await evaluate(cdp, `document.querySelector('.phase-convergence__trigger').closest('.phase-convergence__card').scrollIntoView({block:'center'})`);
-  await waitFor(cdp, `document.querySelector('.phase-convergence__trigger').closest('.phase-convergence__card').classList.contains('is-visible')`, `${width}: 最終SUBJECT 16が表示されません`);
+  await evaluate(cdp, `document.querySelector('[data-convergence-end]').scrollIntoView({block:'end'})`);
+  await waitFor(cdp, `document.body.dataset.phase === 'phase4' && !document.querySelector('[data-convergence-result]').hidden`, `${width}: 一覧末尾で収束結果が表示されません`, 5000);
   if (process.env.REDUCED_MOTION !== '1') {
     assert(await evaluate(cdp, `getComputedStyle(document.querySelector('.phase-convergence__card.is-anomaly-subject'), '::after').animationName === 'review-noise'`), `${width}: 最後から5番目のノイズが動作していません`);
   }
-  await evaluate(cdp, `document.querySelector('.phase-convergence__trigger').click()`);
-  await waitFor(cdp, `document.body.dataset.phase === 'phase4' && !document.querySelector('[data-convergence-result]').hidden`, `${width}: 収束結果が表示されません`, 5000);
   assert(await evaluate(cdp, `document.querySelectorAll('.convergence-stage__photos img').length === 16 && document.querySelector('.convergence-stage__result strong').textContent === '第6段階　定着完了' && document.querySelector('.convergence-stage__result span').textContent === '基準人格モデルとの一致を確認'`), `${width}: 第6段階の収束演出が正しくありません`);
   if (process.env.REDUCED_MOTION !== '1') {
     assert(await evaluate(cdp, `getComputedStyle(document.querySelector('.convergence-stage__photos img')).animationName === 'gather-person' && getComputedStyle(document.querySelector('.convergence-stage__result')).animationName === 'convergence-result'`), `${width}: 第6段階のアニメーションが動作していません`);
@@ -172,7 +170,7 @@ const testWidth = async (width) => {
   assert(await evaluate(cdp, `document.documentElement.scrollWidth <= window.innerWidth`), `${width}: TRUTH has horizontal overflow`);
   assert(await evaluate(cdp, `document.querySelector('.truth-delivery__card img').complete && document.querySelector('.truth-delivery__card img').naturalWidth > 0`), `${width}: ending-sweetpea.jpg failed to load`);
   assert(await evaluate(cdp, `document.querySelector('.truth-delivery__record h3').textContent === '第1段階 緊張抑制'`), `${width}: first-stage record is missing`);
-  assert(await evaluate(cdp, `decodeURIComponent(document.querySelector('.truth-share--delivery').href).includes('花のある生活が一番落ち着きます。\\nWHITE BLOOMのある今の生活がとても好きです。\\n#おかしなサイト')`), `${width}: X share text is incorrect`);
+  assert(await evaluate(cdp, `decodeURIComponent(document.querySelector('.truth-share--delivery').href).includes('花のある生活が一番落ち着きます。\\nWHITE VEIL BLOOMのある今の生活がとても好きです。\\n#おかしなサイト')`), `${width}: X share text is incorrect`);
   assert(await evaluate(cdp, `document.querySelector('.truth-delivery__top').getAttribute('href') === 'index.html'`), `${width}: TOP return link is missing`);
   assert(await evaluate(cdp, `document.documentElement.scrollWidth <= window.innerWidth`), `${width}: Ending has horizontal overflow`);
   await evaluate(cdp, `document.querySelector('[data-exploration-reset]').click()`);
