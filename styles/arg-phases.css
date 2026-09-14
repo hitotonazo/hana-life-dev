@@ -34,7 +34,7 @@ body[data-phase="phase2"] [data-flower="dahlia"] .flower-card__image { position:
 body[data-phase="phase2"] [data-flower="dahlia"].is-dahlia-whitened .flower-card__image::after { position: absolute; z-index: 5; inset: 0; opacity: 0; background: repeating-linear-gradient(0deg, transparent 0 4px, rgba(183,16,16,.32) 5px, transparent 6px 9px); content: ""; pointer-events: none; animation: phase2-dahlia-noise 2s steps(2, end) infinite; }
 body[data-phase="phase2"] [data-flower="dahlia"].is-dahlia-settled { cursor: pointer; }
 
-body[data-phase="phase2"] .flower-care + .cta { color: var(--color-text); background-color: var(--color-white); background-image: url("../images/paper.jpg"); background-attachment: fixed; background-position: center top; background-size: cover; }
+body[data-phase="phase2"] .flower-care + .cta { color: var(--color-text); background-color: var(--color-white); background-image: url("../images/paper.webp"); background-attachment: fixed; background-position: center top; background-size: cover; }
 body[data-phase="phase2"] .flower-care + .cta h2 { color: var(--color-brown); }
 body[data-phase="phase2"] .flower-care + .cta .eyebrow { color: var(--color-pink-dark); }
 

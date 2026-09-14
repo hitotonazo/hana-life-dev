@@ -26,7 +26,7 @@
   align-items: center;
   padding-block: clamp(100px, 14vw, 180px);
   border-bottom: 1px solid #393d38;
-  background: linear-gradient(rgba(14, 16, 14, .7), rgba(14, 16, 14, .78)), url("../images/white-flower.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(14, 16, 14, .7), rgba(14, 16, 14, .78)), url("../images/white-flower.webp") center/cover no-repeat;
 }
 
 .truth-code,
@@ -380,7 +380,7 @@
 .truth-delivery {
   padding: clamp(60px, 16vw, 120px) var(--gutter);
   color: var(--color-text);
-  background: #fffafa url("../images/paper.jpg") center/cover fixed;
+  background: #fffafa url("../images/paper.webp") center/cover fixed;
   text-align: center;
 }
 

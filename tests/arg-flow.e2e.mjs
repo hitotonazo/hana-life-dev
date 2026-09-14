@@ -170,7 +170,7 @@ const testWidth = async (width) => {
   assert(await evaluate(cdp, `document.documentElement.scrollWidth <= window.innerWidth`), `${width}: TRUTH has horizontal overflow`);
   assert(await evaluate(cdp, `document.querySelector('.truth-delivery__card img').complete && document.querySelector('.truth-delivery__card img').naturalWidth > 0`), `${width}: ending-sweetpea.jpg failed to load`);
   assert(await evaluate(cdp, `document.querySelector('.truth-delivery__record h3').textContent === '第1段階 緊張抑制'`), `${width}: first-stage record is missing`);
-  assert(await evaluate(cdp, `decodeURIComponent(document.querySelector('.truth-share--delivery').href).includes('花のある生活が一番落ち着きます。\\nWHITE VEIL BLOOMのある今の生活がとても好きです。\\n#おかしなサイト')`), `${width}: X share text is incorrect`);
+  assert(await evaluate(cdp, `decodeURIComponent(document.querySelector('.truth-share--delivery').href).includes('花のある生活が一番落ち着きます。\\nWHITE VEIL BLOOMのある今の生活がとても好きです。\\n#おかしなサイト\\n\\nhttps://x.com/ARG_ObserverX')`), `${width}: X share text is incorrect`);
   assert(await evaluate(cdp, `document.querySelector('.truth-delivery__top').getAttribute('href') === 'index.html'`), `${width}: TOP return link is missing`);
   assert(await evaluate(cdp, `document.documentElement.scrollWidth <= window.innerWidth`), `${width}: Ending has horizontal overflow`);
   await evaluate(cdp, `document.querySelector('[data-exploration-reset]').click()`);

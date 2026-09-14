@@ -33,7 +33,7 @@ body {
   margin: 0;
   color: var(--color-text);
   background-color: var(--color-white);
-  background-image: url("../images/paper.jpg");
+  background-image: url("../images/paper.webp");
   background-attachment: fixed;
   background-position: center top;
   background-size: cover;
@@ -213,7 +213,7 @@ blockquote { margin: 0; }
 .voices-page { padding-top: 0; }
 .voice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
 .review-card { display: grid; min-width: 0; grid-template-columns: 180px 1fr; border: 1px solid var(--color-border); background: var(--color-white); }
-.review-card__portrait { width: 100%; aspect-ratio: 1; align-self: start; background-color: var(--color-bg-sub); background-image: url("../images/review-users-sheet.jpg"); background-repeat: no-repeat; background-size: 400% 400%; }
+.review-card__portrait { width: 100%; aspect-ratio: 1; align-self: start; background-color: var(--color-bg-sub); background-image: url("../images/review-users-sheet.webp"); background-repeat: no-repeat; background-size: 400% 400%; }
 .portrait-01 { background-position: 0 0; }
 .portrait-02 { background-position: 33.333% 0; }
 .portrait-04 { background-position: 100% 0; }
@@ -402,7 +402,7 @@ blockquote { margin: 0; }
 .flower-care,
 .voice-feature {
   background-color: var(--color-white);
-  background-image: url("../images/paper.jpg");
+  background-image: url("../images/paper.webp");
   background-attachment: fixed;
   background-position: center top;
   background-size: cover;
@@ -416,7 +416,7 @@ blockquote { margin: 0; }
 
 #contact {
   color: var(--color-white);
-  background: linear-gradient(rgba(168, 116, 116, .58), rgba(168, 116, 116, .58)), url("../images/flower-bg.jpg") center / cover no-repeat;
+  background: linear-gradient(rgba(168, 116, 116, .58), rgba(168, 116, 116, .58)), url("../images/flower-bg.webp") center / cover no-repeat;
 }
 #contact h2,
 #contact .eyebrow,

@@ -46,7 +46,7 @@
     normalImage.classList.add('home-dahlia-anomaly__normal');
     const prototypeImage = document.createElement('img');
     prototypeImage.className = 'home-dahlia-anomaly__prototype';
-    prototypeImage.src = 'images/prototype-dahlia.jpg';
+    prototypeImage.src = 'images/prototype-dahlia.webp';
     prototypeImage.alt = '';
     prototypeImage.width = 1536;
     prototypeImage.height = 1024;

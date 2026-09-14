@@ -100,7 +100,7 @@
       const card = element('article', `phase-convergence__card${repeated ? ' phase-convergence__card--repeated' : ''}${hasNoise ? ' is-anomaly-subject' : ''}`);
       card.style.setProperty('--record-delay', `${Math.min(position, 12) * 70}ms`);
       const portrait = element('img', 'phase-convergence__portrait');
-      portrait.src = `images/review-human-${image}.jpg`;
+      portrait.src = `images/review-human-${image}.webp`;
       portrait.alt = repeated ? 'SUBJECT 11と同一の利用者写真' : `${name}の利用者写真`;
       portrait.width = 313;
       portrait.height = 313;
@@ -121,7 +121,7 @@
     const photos = element('div', 'convergence-stage__photos');
     people.forEach(({ image }, index) => {
       const imageNode = element('img');
-      imageNode.src = `images/review-human-${image}.jpg`;
+      imageNode.src = `images/review-human-${image}.webp`;
       imageNode.alt = '';
       imageNode.width = 313;
       imageNode.height = 313;
@@ -133,7 +133,7 @@
     resultButton.dataset.phaseAction = 'convergence-result';
     result.type = 'button';
     const resultImage = element('img');
-    resultImage.src = 'images/convergence-human-01.jpg';
+    resultImage.src = 'images/convergence-human-01.webp';
     resultImage.alt = '収束後の代表利用者';
     resultImage.width = 409;
     resultImage.height = 768;
